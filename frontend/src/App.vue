@@ -3,8 +3,21 @@
     <v-app-bar
       color="#1e2328"
       dark
+
       height="150 em"
+      absolute
+      prominent
+      height="90px"
+      src="./assets/appban.png"
+      fade-img-on-scroll
+      scroll-target="#scrolling-techniques-3"
     >
+      <template v-slot:img="{ props }">
+        <v-img
+          v-bind="props"
+          gradient="to top right, rgba(45, 51, 56,.7), rgba(30, 35, 40)"
+        ></v-img>
+      </template>
     <!-- Icon -->
       <v-col
         cols="1"
@@ -23,7 +36,7 @@
         class="mt-4"
       >
         <v-card
-          color="#1e2328"
+color="#1e2328"
           tile
           flat
           class="mb-n6"
