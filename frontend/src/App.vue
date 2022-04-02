@@ -19,7 +19,7 @@
       </v-col>
       <!-- Title -->
       <v-col
-        cols="8"
+        cols="7"
         class="mt-4"
       >
         <v-card
@@ -37,7 +37,7 @@
       </v-col>
       <!-- Nav Buttons -->
       <v-col
-        cols="3"
+        cols="4"
         class="mt-3 ml-n2"
       >
         <v-row 
