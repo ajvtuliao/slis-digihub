@@ -21,17 +21,20 @@
       return {
         items: [
           {
-            src: '../assets/appban.png',
+            src: require('../assets/img3.png'),
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+            src: require('../assets/img4.jpg'),
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+            src: require('../assets/img5.jpg'),
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+            src: require('../assets/img6.png'),
           },
+          {
+            src: require('../assets/img7.jpg'),
+          }
         ]
       }
     }
