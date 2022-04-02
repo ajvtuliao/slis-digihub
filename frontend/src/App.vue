@@ -10,12 +10,12 @@
         cols="1"
         class="mt-4"
       >
-        <!-- <v-img 
-          :src="require('../assets/liblogo.svg')"
+        <v-img 
+          :src="require('./assets/liblogo.svg')"
           contain
-          height="70px"
-          width="65px"
-        /> -->
+          height="120px"
+          width="110px"
+        />
       </v-col>
       <!-- Title -->
       <v-col
@@ -40,7 +40,37 @@
         cols="3"
         class="mt-3 ml-n2"
       >
-
+        <v-row 
+          align="center"
+          >
+            <v-btn 
+              text
+              color="#faf4e6"
+            >
+              Home
+            </v-btn>
+            <v-btn 
+              text
+              color="#faf4e6"
+            >
+              Collections
+            </v-btn>
+            <v-btn 
+              text
+              color="#faf4e6"
+            >
+              About
+            </v-btn>
+            <v-btn 
+              text
+              color="#faf4e6"
+            >
+              <v-icon class="mr-1">
+                mdi-login
+              </v-icon>
+              Login
+            </v-btn>
+        </v-row>
       </v-col>
     </v-app-bar>
     <v-main>
