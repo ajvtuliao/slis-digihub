@@ -1,42 +1,48 @@
 <template>
-  <v-app>
+  <v-app style="background: #faf4e6">
     <v-app-bar
-      app
-      color="primary"
+      color="#1e2328"
       dark
+      height="90px"
     >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+    <!-- Icon -->
+      <v-col
+        cols="1"
+        class="mt-4"
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+        <!-- <v-img 
+          :src="require('../assets/liblogo.svg')"
+          contain
+          height="70px"
+          width="65px"
+        /> -->
+      </v-col>
+      <!-- Title -->
+      <v-col
+        cols="8"
+        class="mt-4"
+      >
+        <v-card
+          style="border-bottom: 3px solid #fac750"
+          color="#1e2328"
+          width="336px"
+          tile
+          flat
+          class="mb-n6"
+        >
+          <span class="font-weight-bold display-2 text-decoration-underline mr-3"> UP SLIS Library</span>
+        </v-card>
+        <br/>
+        <span class="font-weight-light display-2"> Digital Hub</span>
+      </v-col>
+      <!-- Nav Buttons -->
+      <v-col
+        cols="3"
+        class="mt-3 ml-n2"
+      >
 
+      </v-col>
+    </v-app-bar>
     <v-main>
       <router-view/>
     </v-main>
@@ -53,3 +59,6 @@ export default {
   }),
 };
 </script>
+<style scoped>
+
+</style>
