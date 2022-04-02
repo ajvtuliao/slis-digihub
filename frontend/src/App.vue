@@ -3,7 +3,7 @@
     <v-app-bar
       color="#1e2328"
       dark
-      height="150 em"
+      height="115 em"
       src="./assets/appban.png"
       fade-img-on-scroll
       scroll-target="#scrolling-techniques-3"
@@ -17,7 +17,7 @@
     <!-- Icon -->
       <v-col
         cols="1"
-        class="mt-4"
+        class="mb-1"
       >
         <v-img 
           :src="require('./assets/liblogo.svg')"
@@ -29,7 +29,7 @@
       <!-- Title -->
       <v-col
         cols="7"
-        class="mt-4"
+        class="mb-1"
       >
       <div class="mb-n6">
         <div class="font-weight-bold display-2 text-decoration-underline mr-3">
