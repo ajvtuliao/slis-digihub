@@ -3,11 +3,11 @@
     <v-app-bar
       color="#1e2328"
       dark
+      fixed
       height="115 em"
       src="./assets/appban.png"
       fade-img-on-scroll
       scroll-target="#scrolling-techniques-3"
-      style="position: -webkit-sticky; position: sticky; top: 0em; z-index: 2;"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -53,7 +53,7 @@
               text
               color="#faf4e6"
             >
-              Home
+              Admin Home
             </v-btn>
             <v-btn 
               text
