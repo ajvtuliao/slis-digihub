@@ -3,10 +3,7 @@
     <v-app-bar
       color="#1e2328"
       dark
-
       height="150 em"
-      absolute
-      prominent
       src="./assets/appban.png"
       fade-img-on-scroll
       scroll-target="#scrolling-techniques-3"
@@ -34,18 +31,12 @@
         cols="7"
         class="mt-4"
       >
-        <v-card
-          color="#1e2328"
-          tile
-          flat
-          class="mb-n6"
-        >
-          <div class="font-weight-bold display-2 text-decoration-underline mr-3">
+      <div class="mb-n6">
+        <div class="font-weight-bold display-2 text-decoration-underline mr-3">
             UP SLIS Library
             <hr color="#fac750" size="3px" width="336 em">
           </div>
-          
-        </v-card>
+      </div>
         <br/>
         <span class="font-weight-light display-2"> Digital Hub</span>
       </v-col>
