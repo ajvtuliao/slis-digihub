@@ -3,6 +3,7 @@
     <v-app-bar
       color="#1e2328"
       dark
+      fixed
       height="115 em"
       src="./assets/appban.png"
       fade-img-on-scroll
