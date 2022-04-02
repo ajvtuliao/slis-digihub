@@ -7,7 +7,6 @@
       height="150 em"
       absolute
       prominent
-      height="90px"
       src="./assets/appban.png"
       fade-img-on-scroll
       scroll-target="#scrolling-techniques-3"
@@ -36,7 +35,7 @@
         class="mt-4"
       >
         <v-card
-color="#1e2328"
+          color="#1e2328"
           tile
           flat
           class="mb-n6"
