@@ -22,8 +22,8 @@
       <v-img 
         :src="require('../assets/liblogo.svg')"
         contain
-        height="120px"
-        width="110px"
+        height="150px"
+        width="140px"
       />
     </v-col>
     <!-- Title -->
@@ -45,62 +45,94 @@
       cols="4"
       class="mt-3 ml-n2"
     >
-      <v-row 
-        align="center"
-        >
+      <v-btn 
+        text
+        color="#faf4e6"
+      >
+        Home
+      </v-btn>
+      <v-btn 
+        text
+        color="#faf4e6"
+      >
+        Collections
+      </v-btn>
+      <v-btn 
+        text
+        color="#faf4e6"
+      >
+        About
+      </v-btn>
+      <v-dialog
+        v-model="dialog"
+        max-width="250px"
+      >
+        <template v-slot:activator="{ on, attrs }">
           <v-btn 
             text
-            color="#faf4e6"
+            color= "#faf4e6"
+            v-bind= "attrs"
+            v-on= "on"
           >
-            Home
+            <v-icon class="mr-1">
+              mdi-login
+            </v-icon>
+              Login
           </v-btn>
-          <v-btn 
-            text
-            color="#faf4e6"
-          >
-            Collections
-          </v-btn>
-          <v-btn 
-            text
-            color="#faf4e6"
-          >
-            About
-          </v-btn>
-          <v-dialog
-            v-model="dialog"
-            max-width="250px"
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn 
-                text
-                color= "#faf4e6"
-                v-bind= "attrs"
-                v-on= "on"
+        </template>
+        <v-card>
+          <v-row>
+            <v-card-title 
+            font-weight-bold 
+            justify="center"
+          > 
+            Login 
+          </v-card-title>
+          <v-card-text align="center">For admin staff only.</v-card-text>
+          </v-row>
+          <v-row>
+            <v-col cols="3">
+              <v-card-text>Username: </v-card-text>
+            </v-col>
+            <v-col cols="9">
+              <v-text-field
+                outlined
+                flat
               >
-                <v-icon class="mr-1">
-                  mdi-login
-                </v-icon>
-                  Login
-              </v-btn>
-            </template>
-            <v-card>
-              <v-card-title 
-                font-weight-bold 
-                justify="center"
-              > 
-                Login 
-              </v-card-title>
+
+                  </v-text-field>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="3">
+                  <v-card-text>Password: </v-card-text>
+                </v-col>
+                <v-col cols="9">
+                  <v-text-field
+                    v-model="password"
+                    :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                    :rules="[rules.required]"
+                    :type="show ? 'text' : 'password'"
+                    @click:append="show = !show"
+                    outlined
+                    flat
+                  >
+                  </v-text-field>
+                </v-col>
+              </v-row>
+              
             </v-card>
               
           </v-dialog>
-      </v-row>
     </v-col>
   </v-app-bar>
 </template>
     
 <script>
 export default {
-    
+  show: false,
+  dialog: false,
+  password: '',   
 }
 </script>
 
