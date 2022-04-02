@@ -44,10 +44,73 @@
             <v-btn text color="#faf4e6"> Home </v-btn>
             <v-btn text color="#faf4e6"> Collections </v-btn>
             <v-btn text color="#faf4e6"> About </v-btn>
-            <v-btn text color="#faf4e6">
-              <v-icon class="mr-1"> mdi-login </v-icon>
-              Login
-            </v-btn>
+            <!-- Button for Admin Login -->
+            <v-dialog
+              v-model="dialog"
+              max-width="43em"
+              max-height="120em"
+            >
+              <template v-slot:activator="{on, attrs}">
+                <v-btn
+                  text
+                  color= "#faf4e6"
+                  v-bind= "attrs"
+                  v-on= "on"
+                >
+                  <v-icon class="mr-1">mdi-login</v-icon>
+                  Login
+                </v-btn>
+              </template>
+              <v-card dark>
+                <v-spacer>
+                <h1 class="text-center font-weight-bold pt-7">Admin Login</h1>
+                <h4 class="text-center font-weight-light">For admin staff only.</h4>
+                </v-spacer>
+                  <v-container class="mt-9">
+                    <!-- Username -->
+                    <v-row>
+                      <v-col cols="3">
+                        <h3 class="font-weight-medium px-7 mt-3">Username:</h3>
+                      </v-col>
+                      <v-col cols="9">
+                        <v-text-field
+                          outlined
+                          v-model="username"
+                          flat
+                          class="pr-7"
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <!-- Password -->
+                    <v-row>
+                      <v-col cols="3">
+                        <h3 class="font-weight-medium px-7 mt-3">Password:</h3>
+                      </v-col>
+                      <v-col cols="9">
+                        <v-text-field
+                          v-model="password"
+                          :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                          
+                          :type="show ? 'text' : 'password'"
+                          name="input-10-2"
+                          @click:append="show = !show"
+                          outlined
+                          flat
+                          class="pr-7 input-group--focused"
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-spacer></v-spacer>
+                    <v-row>
+                      <v-col align="center" class="mt-9 mb-4">
+                        <v-btn x-large text color="#f7e37e" pb-9>
+                          Login
+                        </v-btn>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+              </v-card>
+            </v-dialog>
           </v-row>
         </v-col>
       </v-app-bar>
@@ -59,11 +122,18 @@
 <script>
 export default {
   name: 'App',
-
-  data: () => ({
-    //
-  }),
-};
+  data () {
+    return {
+      show: false,
+      password: '',
+      username: '',
+      dialog: false,
+      rules: {
+        required: (value) => !!value || "Required.",
+      },
+    }
+  }
+}
 </script>
 <style scoped>
 </style>
