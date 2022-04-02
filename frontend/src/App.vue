@@ -3,7 +3,7 @@
     <v-app-bar
       color="#1e2328"
       dark
-      height="90px"
+      height="150 em"
     >
     <!-- Icon -->
       <v-col
@@ -23,14 +23,16 @@
         class="mt-4"
       >
         <v-card
-          style="border-bottom: 3px solid #fac750"
           color="#1e2328"
-          width="336px"
           tile
           flat
           class="mb-n6"
         >
-          <span class="font-weight-bold display-2 text-decoration-underline mr-3"> UP SLIS Library</span>
+          <div class="font-weight-bold display-2 text-decoration-underline mr-3">
+            UP SLIS Library
+            <hr color="#fac750" size="3px" width="336 em">
+          </div>
+          
         </v-card>
         <br/>
         <span class="font-weight-light display-2"> Digital Hub</span>
