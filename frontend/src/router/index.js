@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Collections from '../views/Collections.vue'
+import Admin from '../views/Admin.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +24,11 @@ const routes = [
     path: '/collections',
     name: 'collections',
     component: Collections
+  },
+  {
+    path: '/admin',
+    names: 'admin',
+    component: Admin
   }
 ]
 
