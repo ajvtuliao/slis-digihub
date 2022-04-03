@@ -28,15 +28,17 @@
         rounded="0"
         height="40em"
       >
-        <v-row align="center" justify="center pt-9">
-          <v-card-title class="history ">History</v-card-title>
-        </v-row>
         <v-row>
           <v-col cols="7">
-            <v-card-text class="histext mx-5 px-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+            <v-row align="center" justify="center" class="pt-9">
+              <v-card-title class="history">History</v-card-title>
+            </v-row>
+            <v-row>
+              <v-card-text class="histext mx-5 px-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+            </v-row>
           </v-col>
           <v-col cols="5">
-
+            <v-img src="../assets/history.svg" class="histimg mt-n3"></v-img>
           </v-col>
         </v-row>
       </v-card>
@@ -131,12 +133,16 @@ export default {
   .history {
     font-size: 3.5em;
     color: #fffae6;
+    padding-bottom: 0.7em;
     text-decoration: underline;
     text-decoration-color: bisque;
     text-underline-offset: 0.20em;
   }
   .histext {
     color:#fffdf7;
+  }
+  .histimg {
+    height: 40em;
   }
   .mission {
     font-size: 3.5em;
