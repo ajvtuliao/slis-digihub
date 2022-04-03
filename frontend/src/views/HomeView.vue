@@ -17,12 +17,13 @@
     <div class="design-2"></div>
     <div class="design-3"></div>
     <div>
-      <h1 align="center" class="font-weight-bold mt-5 mb-10" color="rgba(30, 35, 40)"> Electronic Resources </h1>
+      <h1 align="center" class="font-weight-bold mt-5 mb-10 text-decoration-underline" color="rgba(30, 35, 40)"> Electronic Resources </h1>
+      <div class="line"></div>
       <v-sheet
         class="mx-auto mb-10"
-        elevation="6"
+        elevation="4"
         max-width="80em"
-        color="#fff8cf"
+        color="rgba(42, 46, 52, 0.1)"
       >
         <v-slide-group
           v-model="eresource"
@@ -36,7 +37,7 @@
             v-slot="{ active, toggle }"
           >
             <v-card
-            :color=" active ? '#fcda42' : '#ebe8ce'"
+            :color=" active ? '#fcda42' : '#fffade'"
             class="ma-4"
             height="300"
             width="200"
@@ -85,6 +86,9 @@
   }
 </script>
 <style scoped>
+  h1 {
+    font-size: 3em;
+  }
   .design-1 {
     width: 0;
 	  height: 0;
