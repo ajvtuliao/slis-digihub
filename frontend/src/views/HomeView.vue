@@ -17,11 +17,12 @@
     <div class="design-2"></div>
     <div class="design-3"></div>
     <div>
-      <h1 align="center" class="font-weight-bold my-10" color="rgba(30, 35, 40)"> Electronic Resources </h1>
+      <h1 align="center" class="font-weight-bold mt-5 mb-10" color="rgba(30, 35, 40)"> Electronic Resources </h1>
       <v-sheet
-        class="mx-auto"
+        class="mx-auto mb-10"
         elevation="6"
         max-width="80em"
+        color="#fff8cf"
       >
         <v-slide-group
           v-model="eresource"
@@ -35,7 +36,7 @@
             v-slot="{ active, toggle }"
           >
             <v-card
-            :color=" active ? '#fcda42' : 'grey lighten-1'"
+            :color=" active ? '#fcda42' : '#ebe8ce'"
             class="ma-4"
             height="300"
             width="200"

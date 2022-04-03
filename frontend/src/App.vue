@@ -116,21 +116,31 @@
       </v-app-bar>
       <router-view />
     </v-main>
+    <!-- v-footer.pb-3.mt-5(color="transparent", padless) 
+    v-card.text-center(flat, tile, color="transparent", width="1200")
+      v-divider
+      v-btn.mx-4(v-for="icon in icons", :key="icon.name", icon dark)
+        <a :href="icon.url" :target="icon.target"><v-icon size="24px">{{ icon.name }}</v-icon></a>
+      h6.mt-2.text-muted CS Libraries eBook Hub — {{ new Date().getFullYear() }}  -->
     <v-footer
-      color="transparent"
+      dark
       padless
     >
-      <v-card class="text-center" flat tile width="100%" color="##dbbb02">
-        <v-divider>
-        </v-divider>
-        <v-btn class="mx-4" v-for="icon in icons" :key="icon.name" icon dark>
-          <a :href="icon.url" :target="icon.target">
+      <v-card 
+        class="text-center" 
+        flat 
+        tile 
+        width="100%" 
+        color="#1e2328"
+      >
+        <v-card-text>
+          <v-btn icon dark class="mx-4" v-for="icon in icons" :key="icon.name" :href="icon.url" :target="icon.target">
             <v-icon size="24px">
               {{ icon.name }}
             </v-icon>
-            </a>
-        </v-btn>
-        <h6 class="mt-2 text-muted"> <i> UP School of Library and Information Studies </i> — {{ new Date().getFullYear() }} </h6>
+          </v-btn>
+        </v-card-text>
+        <v-card-text class="mt-2 text-muted"> <i> UP School of Library and Information Studies Library</i> — {{ new Date().getFullYear() }} </v-card-text>
       </v-card>
     </v-footer>
   </v-app>
@@ -151,24 +161,19 @@ export default {
       icons: [
         {
           name: "mdi-facebook",
-          url: "https://www.facebook.com/UPCSLibrary/",
+          url: "https://www.facebook.com/UPSLISLib",
           target: "_blank",
         },
         {
-          name: "mdi-twitter",
-          url: "https://twitter.com/updcslib",
+          name: "mdi-email",
+          url: "mailto:library.slis.updiliman@up.edu.ph",
           target: "_blank",
         },
         {
           name: "mdi-youtube",
-          url: "http://www.cslib.upd.edu.ph/index.php",
+          url: "https://www.youtube.com/channel/UC8zyLyhnqA3yln_LqXdB-mQ",
           target: "_blank",
         },
-        {
-          name: "mdi-instagram",
-          url: "http://www.cslib.upd.edu.ph/index.php",
-          target: "_blank",
-        }
       ],
     }
   }
