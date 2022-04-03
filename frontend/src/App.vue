@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background: #faf4e6">
+  <v-app style="background: rgba(252, 239, 192, 0.5)">
     <v-main>
 <v-app-bar
         color="#1e2328"
@@ -13,7 +13,7 @@
         <template v-slot:img="{ props }">
           <v-img
             v-bind="props"
-            gradient="to top right, rgba(45, 51, 56,.7), rgba(30, 35, 40)"
+            gradient="to top right, rgba(45, 51, 56,.8), rgba(30, 35, 40)"
           ></v-img>
         </template>
         <!-- Icon -->
@@ -116,12 +116,7 @@
       </v-app-bar>
       <router-view />
     </v-main>
-    <!-- v-footer.pb-3.mt-5(color="transparent", padless) 
-    v-card.text-center(flat, tile, color="transparent", width="1200")
-      v-divider
-      v-btn.mx-4(v-for="icon in icons", :key="icon.name", icon dark)
-        <a :href="icon.url" :target="icon.target"><v-icon size="24px">{{ icon.name }}</v-icon></a>
-      h6.mt-2.text-muted CS Libraries eBook Hub — {{ new Date().getFullYear() }}  -->
+
     <v-footer
       dark
       padless
@@ -140,7 +135,7 @@
             </v-icon>
           </v-btn>
         </v-card-text>
-        <v-card-text class="mt-2 text-muted"> <i> UP School of Library and Information Studies Library</i> — {{ new Date().getFullYear() }} </v-card-text>
+        <v-card-text class="mt-n4 text-muted"> <i> UP School of Library and Information Studies Library</i> — {{ new Date().getFullYear() }} </v-card-text>
       </v-card>
     </v-footer>
   </v-app>
