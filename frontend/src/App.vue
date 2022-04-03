@@ -41,9 +41,9 @@
         <!-- Nav Buttons -->
         <v-col cols="4" class="mt-3 ml-n2">
           <v-row align="center">
-            <v-btn text color="#faf4e6"> Home </v-btn>
-            <v-btn text color="#faf4e6"> Collections </v-btn>
-            <v-btn text color="#faf4e6"> About </v-btn>
+            <v-btn text color="#faf4e6" @click="goToHome"> Home </v-btn>
+            <v-btn text color="#faf4e6" @click="goToCollection"> Collections </v-btn>
+            <v-btn text color="#faf4e6" @click="goToAbout"> About </v-btn>
             <!-- Button for Admin Login -->
             <v-dialog
               v-model="dialog"
@@ -175,6 +175,17 @@ export default {
           target: "_blank",
         },
       ],
+    }
+  },
+  methods: {
+    goToCollection() {
+      this.$router.push('/collections')
+    },
+    goToAbout() {
+      this.$router.push('/about')
+    },
+    goToHome() {
+      this.$router.push('/')
     }
   }
 }
