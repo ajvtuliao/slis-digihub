@@ -116,6 +116,23 @@
       </v-app-bar>
       <router-view />
     </v-main>
+    <v-footer
+      color="transparent"
+      padless
+    >
+      <v-card class="text-center" flat tile width="100%" color="##dbbb02">
+        <v-divider>
+        </v-divider>
+        <v-btn class="mx-4" v-for="icon in icons" :key="icon.name" icon dark>
+          <a :href="icon.url" :target="icon.target">
+            <v-icon size="24px">
+              {{ icon.name }}
+            </v-icon>
+            </a>
+        </v-btn>
+        <h6 class="mt-2 text-muted"> <i> UP School of Library and Information Studies </i> — {{ new Date().getFullYear() }} </h6>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 
@@ -131,9 +148,32 @@ export default {
       rules: {
         required: (value) => !!value || "Required.",
       },
+      icons: [
+        {
+          name: "mdi-facebook",
+          url: "https://www.facebook.com/UPCSLibrary/",
+          target: "_blank",
+        },
+        {
+          name: "mdi-twitter",
+          url: "https://twitter.com/updcslib",
+          target: "_blank",
+        },
+        {
+          name: "mdi-youtube",
+          url: "http://www.cslib.upd.edu.ph/index.php",
+          target: "_blank",
+        },
+        {
+          name: "mdi-instagram",
+          url: "http://www.cslib.upd.edu.ph/index.php",
+          target: "_blank",
+        }
+      ],
     }
   }
 }
 </script>
 <style scoped>
+
 </style>
