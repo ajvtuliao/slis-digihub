@@ -88,13 +88,13 @@
           <v-col cols="5">
             <v-card color="#3d424a" width="40em" height="30em">
               <h2 class="text-center pt-5" style="color: #fffcf0">Goals</h2>
-              <v-card-text class="px-5 text-justify" style="color: #fffdf5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+              <v-card-text class="px-5 text-justify" style="color: #fff2cc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
             </v-card>
           </v-col>
           <v-col cols="5">
             <v-card color="#484e57" width="40em" height="30em" >
               <h2 class="text-center pt-5" style="color: #fffcf0">Objectives</h2>
-              <v-card-text class="px-5 text-justify" style="color: #fffdf5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+              <v-card-text class="px-5 text-justify" style="color: #fff2cc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
             </v-card>
           </v-col>
           <v-col></v-col>
@@ -164,14 +164,14 @@ export default {
   }
   .history {
     font-size: 3.5em;
-    color: #fffae6;
+    color: #fff4c6;
     padding-bottom: 0.7em;
     text-decoration: underline;
     text-decoration-color: bisque;
     text-underline-offset: 0.20em;
   }
   .histext {
-    color:#fffdf7;
+    color:#fff2cc;
   }
   .histimg {
     height: 40em;
@@ -186,7 +186,7 @@ export default {
 
   .goals {
     font-size: 3.5em;
-    color: #fffae6;
+    color: #fff4c6;
     text-decoration: underline;
     text-decoration-color: bisque;
     text-underline-offset: 0.20em;

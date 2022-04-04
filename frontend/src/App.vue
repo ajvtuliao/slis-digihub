@@ -26,24 +26,56 @@
           />
         </v-col>
         <!-- Title -->
-        <v-col cols="7" class="mb-1">
+        <v-col cols="7" class="mb-n3">
           <div class="mb-n6">
             <div
-              class="font-weight-bold display-2 text-decoration-underline mr-3"
+              class=" slis font-weight-bold display-1 mr-3"
             >
-              UP SLIS Library
-              <hr color="#fac750" size="3px" width="336 em" />
+              UP School of Library and Information Studies Library
             </div>
           </div>
           <br />
-          <span class="font-weight-light display-2"> Digital Hub</span>
+          <span class="font-weight-light"> University of the Philippines Diliman</span>
         </v-col>
         <!-- Nav Buttons -->
-        <v-col cols="4" class="mt-3 ml-n2">
+        <v-col cols="4" class="mt-3 ml-2">
           <v-row align="center">
-            <v-btn text color="#faf4e6" @click="goToHome"> Home </v-btn>
-            <v-btn text color="#faf4e6" @click="goToCollection"> Collections </v-btn>
-            <v-btn text color="#faf4e6" @click="goToAbout"> About </v-btn>
+            <v-btn class="mx-n1" text color="#faf4e6" @click="goToHome"> Home </v-btn>
+            <v-btn class="mx-n1" text color="#faf4e6" @click="goToCollection"> Collections </v-btn>
+            <v-btn class="mx-n1" text color="#faf4e6" @click="goToAbout"> About </v-btn>
+            <v-menu
+              transition="slide-x-transition"
+              offset-y
+              bottom
+              right
+              dense
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn class="mx-n1" text color="faf4e6" v-bind="attrs" v-on="on">
+                Links
+                </v-btn>
+              </template>
+
+              <v-list color="rgb(255, 204, 0)" dense>
+                <v-list-item-group>
+                  <v-list-item class="font-weight-bold" :href="'https://upslis.info/'">
+                    <v-list-item-title>UP SLIS Website</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item class="font-weight-bold" :href="'https://ds.mainlib.upd.edu.ph/'">
+                    <v-list-item-title>Tuklas</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item class="font-weight-bold" :href="'https://upslis.info/'">
+                    <v-list-item-title>Tuklas</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item class="font-weight-bold" :href="'https://upslis.info/'">
+                    <v-list-item-title>Tuklas</v-list-item-title>
+                  </v-list-item>
+                  <v-list-item class="font-weight-bold" :href="'https://upslis.info/'">
+                    <v-list-item-title>Tuklas</v-list-item-title>
+                  </v-list-item>
+                </v-list-item-group>
+              </v-list>
+          </v-menu>
             <!-- Button for Admin Login -->
             <v-dialog
               v-model="dialog"
@@ -186,5 +218,8 @@ export default {
 }
 </script>
 <style scoped>
-
+  .slis{
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 204, 0);
+  }
 </style>
