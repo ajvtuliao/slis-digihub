@@ -64,7 +64,7 @@
           </v-col>
           <v-col cols="5">
             <v-card color="#f7c945" width="40em" height="30em" >
-              <h2 class="text-center pt-5" style="">Vision</h2>
+              <h2 class="text-center pt-5">Vision</h2>
               <v-card-text class="px-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
             </v-card>
           </v-col>
@@ -86,15 +86,15 @@
         <v-row class="my-5">
           <v-col></v-col>
           <v-col cols="5">
-            <v-card color="#fff1c7" width="40em" height="30em">
-              <h2 class="text-center pt-5">Mission</h2>
-              <v-card-text class="px-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+            <v-card color="#3d424a" width="40em" height="30em">
+              <h2 class="text-center pt-5" style="color: #fffcf0">Goals</h2>
+              <v-card-text class="px-5 text-justify" style="color: #fffdf5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
             </v-card>
           </v-col>
           <v-col cols="5">
-            <v-card color="#f7c945" width="40em" height="30em" >
-              <h2 class="text-center pt-5" style="">Vision</h2>
-              <v-card-text class="px-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+            <v-card color="#484e57" width="40em" height="30em" >
+              <h2 class="text-center pt-5" style="color: #fffcf0">Objectives</h2>
+              <v-card-text class="px-5 text-justify" style="color: #fffdf5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
             </v-card>
           </v-col>
           <v-col></v-col>
