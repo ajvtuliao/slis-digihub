@@ -18,7 +18,6 @@
     <div class="design-3"></div>
     <div>
       <h1 align="center" class="font-weight-bold mt-5 mb-10 text-decoration-underline" color="rgba(30, 35, 40)"> Electronic Resources </h1>
-      <div class="line"></div>
       <v-sheet
         class="mx-auto mb-10"
         elevation="4"
