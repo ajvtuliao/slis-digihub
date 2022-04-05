@@ -110,7 +110,7 @@
         width="100%"
         flat
         rounded="0"
-        height="80em"
+        height="75em"
       >
         <v-row align="center" justify="center pt-9">
           <v-card-title class="staff">SLIS Library Staff</v-card-title>
@@ -122,20 +122,20 @@
             <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">Head Librarian</v-card-text>
           </v-card>
         </v-row>
-        <v-row>
+        <v-row align="center" justify="center" class="pt-3">
           <v-col></v-col>
-          <v-col cols="5" class="">
-            <v-card color="#fff0c4" max-width="20em" height="30em" tile>
-              <v-img height="20em" class="ma-5 mt-5" src="../assets/New Project (18).png"></v-img>
+          <v-col cols="3">
+            <v-card color="#fff0c4" max-width="20em" height="30em">
+              <v-img height="20em" class="ma-5 pt-16" src="../assets/New Project (18).png"></v-img>
               <h3 class="text-center"> Ms. Jessie Rose Bagunu</h3>
               <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">Head Librarian</v-card-text>
             </v-card>
           </v-col>
-          <v-col cols="5" class="">
-            <v-card color="#fff0c4" max-width="20em" height="30em" tile>
-              <v-img height="20em" class="ma-5 mt-5" src="../assets/New Project (19).png"></v-img>
+          <v-col cols="3">
+            <v-card color="#fff0c4" max-width="20em" height="30em" >
+              <v-img height="20em" class="ma-5" src="../assets/New Project (19).png"></v-img>
               <h3 class="text-center"> Ms. Jessie Rose Bagunu</h3>
-              <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">Head Librarian</v-card-text>
+            <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">Head Librarian</v-card-text>
             </v-card>
           </v-col>
           <v-col></v-col>
