@@ -21,6 +21,7 @@
                     <thead>
                         <tr>
                             <th class="text-center">Title</th>
+                            <th class="text-center">Author</th>
                             <th class="text-center">Publisher</th>
                             <th class="text-center">Year</th>
                             <th class="text-center">Type</th>
@@ -29,19 +30,23 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <!-- Cover -->
-                            <td>
-
-                            </td>
                             <!-- Title -->
                             <td>
 
                             </td>
-                            <!-- Type -->
+                            <!-- Author -->
+                            <td>
+
+                            </td>
+                            <!-- Publisher -->
                             <td>
 
                             </td>
                             <!-- Year -->
+                            <td>
+
+                            </td>
+                            <!-- Type -->
                             <td>
 
                             </td>
