@@ -20,10 +20,10 @@
                 <template v-slot:default>
                     <thead>
                         <tr>
-                            <th class="text-center">Cover</th>
                             <th class="text-center">Title</th>
-                            <th class="text-center">Type</th>
+                            <th class="text-center">Publisher</th>
                             <th class="text-center">Year</th>
+                            <th class="text-center">Type</th>
                             <th class="text-center">Links</th>
                         </tr>
                     </thead>
@@ -47,7 +47,7 @@
                             </td>
                             <!-- Links -->
                             <td>
-                                
+
                             </td>
                         </tr>
                     </tbody>

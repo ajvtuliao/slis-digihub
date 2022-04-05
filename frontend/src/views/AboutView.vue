@@ -34,7 +34,10 @@
               <v-card-title class="history">History</v-card-title>
             </v-row>
             <v-row>
-              <v-card-text class="histext mx-5 px-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+              <v-card-text class="histext mx-5 px-5 text-justify">The School of Library and Information Studies Library (SLIS Library) is temporary housed at the College of Science Administration and Library Building.  The SLIS Library collection is primarily for the use of the SLIS population. It is also open to the constituents of the university as well as researchers and graduate students from other universities.</v-card-text>
+              <v-card-text class="histext mx-5 px-5 text-justify">The library’s role is to support and serve the needs of the faculty, students, and researchers of the university.  The main function is to cater to the curricular and research information needs of the constituent of the School of Library and Information Studies.  The Library offers circulation, reserve, reference, information and reader’s advisory services.</v-card-text>
+              <v-card-text class="histext mx-5 px-5 text-justify">In 1961, the Institute of Library Science (ILS) was established as an independent unit of the university.  Since then, the ILS has contributed in setting higher standards of library education thereby responding favorably to the demand for professional librarians in academic, special, and research libraries in the country.  The SLIS provides both students and practicing librarians with materials needed in their work, training, and research.</v-card-text>
+              <v-card-text class="histext mx-5 px-5 text-justify">The library was established after the transfer of library science collection from the Filipiniana Section of the Main Library to the 3rd floor South Wing of the Library Building during the second week of September 1961.</v-card-text>
             </v-row>
           </v-col>
           <v-col cols="5">
@@ -49,7 +52,7 @@
         width="100%"
         flat
         rounded="0"
-        height="40em"
+        height="25em"
       >
         <v-row align="center" justify="center pt-9">
           <v-card-title class="mission">Mission and Vision</v-card-title>
@@ -57,15 +60,15 @@
         <v-row class="my-5">
           <v-col></v-col>
           <v-col cols="5">
-            <v-card color="#fff1c7" width="40em" height="30em">
+            <v-card color="#fff1c7" width="40em" height="10em">
               <h2 class="text-center pt-5">Mission</h2>
-              <v-card-text class="px-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+              <v-card-text class="px-5 text-justify">To support the curricular and research information needs of the faculty, staff, students and other constituents of the School of Library and Information Studies Library.</v-card-text>
             </v-card>
           </v-col>
           <v-col cols="5">
-            <v-card color="#f7c945" width="40em" height="30em" >
+            <v-card color="#f7c945" width="40em" height="10em" >
               <h2 class="text-center pt-5">Vision</h2>
-              <v-card-text class="px-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+              <v-card-text class="px-5 text-justify">The UP School of Library and Information Studies Library envisions itself as the best library supporting the research, academic and information needs of the SLIS faculty, students and other constituents.</v-card-text>
             </v-card>
           </v-col>
           <v-col></v-col>
@@ -78,7 +81,7 @@
         width="100%"
         flat
         rounded="0"
-        height="40em"
+        height="25em"
       >
         <v-row align="center" justify="center pt-9">
           <v-card-title class="goals">Goals and Objectives</v-card-title>
@@ -86,15 +89,15 @@
         <v-row class="my-5">
           <v-col></v-col>
           <v-col cols="5">
-            <v-card color="#3d424a" width="40em" height="30em">
+            <v-card color="#3d424a" width="40em" height="10em">
               <h2 class="text-center pt-5" style="color: #fffcf0">Goals</h2>
               <v-card-text class="px-5 text-justify" style="color: #fff2cc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
             </v-card>
           </v-col>
           <v-col cols="5">
-            <v-card color="#484e57" width="40em" height="30em" >
-              <h2 class="text-center pt-5" style="color: #fffcf0">Objectives</h2>
-              <v-card-text class="px-5 text-justify" style="color: #fff2cc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+            <v-card color="#484e57" width="40em" height="10em" >
+              <h2 class="text-center pt-5" style="color: #fffcf0">Objective</h2>
+              <v-card-text class="px-5 text-justify" style="color: #fff2cc">The main objective of the SLIS Library is to perform its functions, serve the needs of the faculty, students, and researchers of the university and support the instructional, research and extension services of the school.</v-card-text>
             </v-card>
           </v-col>
           <v-col></v-col>
@@ -107,10 +110,35 @@
         width="100%"
         flat
         rounded="0"
-        height="40em"
+        height="80em"
       >
         <v-row align="center" justify="center pt-9">
           <v-card-title class="staff">SLIS Library Staff</v-card-title>
+        </v-row>
+        <v-row align="center" justify="center" class="pt-9">
+          <v-card color="#fff0c4" max-width="20em" height="30em" tile>
+            <v-img height="20em" class="ma-5" src="../assets/New Project (17).png"></v-img>
+            <h3 class="text-center"> Ms. Jessie Rose Bagunu</h3>
+            <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">Head Librarian</v-card-text>
+          </v-card>
+        </v-row>
+        <v-row>
+          <v-col></v-col>
+          <v-col cols="5" class="">
+            <v-card color="#fff0c4" max-width="20em" height="30em" tile>
+              <v-img height="20em" class="ma-5 mt-5" src="../assets/New Project (18).png"></v-img>
+              <h3 class="text-center"> Ms. Jessie Rose Bagunu</h3>
+              <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">Head Librarian</v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="5" class="">
+            <v-card color="#fff0c4" max-width="20em" height="30em" tile>
+              <v-img height="20em" class="ma-5 mt-5" src="../assets/New Project (19).png"></v-img>
+              <h3 class="text-center"> Ms. Jessie Rose Bagunu</h3>
+              <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">Head Librarian</v-card-text>
+            </v-card>
+          </v-col>
+          <v-col></v-col>
         </v-row>
       </v-card>
     </div>
