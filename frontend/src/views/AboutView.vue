@@ -110,35 +110,27 @@
         width="100%"
         flat
         rounded="0"
-        height="75em"
+        height="47em"
       >
-        <v-row align="center" justify="center pt-9">
+        <v-row align="center" justify="center pt-9 pb-16">
           <v-card-title class="staff">SLIS Library Staff</v-card-title>
         </v-row>
         <v-row align="center" justify="center" class="pt-9">
-          <v-card color="#fff0c4" max-width="20em" height="30em" tile>
+          <v-card color="#fff0c4" max-width="20em" height="27em" class="mt-16 mb-n16">
+              <v-img height="20em" class="ma-5 pt-16" src="../assets/New Project (18).png"></v-img>
+              <h3 class="text-center"> Michael D. Amandy</h3>
+              <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">SLIS Library Staff</v-card-text>
+          </v-card>
+          <v-card color="#fff0c4" max-width="20em" height="27em" tile class="mx-6 mt-n16 mb-16">
             <v-img height="20em" class="ma-5" src="../assets/New Project (17).png"></v-img>
             <h3 class="text-center"> Jessie Rose M. Bagunu</h3>
             <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">Head Librarian</v-card-text>
           </v-card>
-        </v-row>
-        <v-row align="center" justify="center" class="pt-3">
-          <v-col></v-col>
-          <v-col cols="3">
-            <v-card color="#fff0c4" max-width="20em" height="30em">
-              <v-img height="20em" class="ma-5 pt-16" src="../assets/New Project (18).png"></v-img>
-              <h3 class="text-center"> Michael D. Amandy</h3>
-              <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">SLIS Library Staff</v-card-text>
-            </v-card>
-          </v-col>
-          <v-col cols="3">
-            <v-card color="#fff0c4" max-width="20em" height="30em" >
+          <v-card color="#fff0c4" max-width="20em" height="27em" class="mt-16 mb-n16">
               <v-img height="20em" class="ma-5" src="../assets/New Project (19).png"></v-img>
               <h3 class="text-center"> Miriam Charmigrance Q. Salcedo</h3>
             <v-card-text align="center" justify="center" class="font-weight-medium mt-n3">SLIS Library Staff</v-card-text>
-            </v-card>
-          </v-col>
-          <v-col></v-col>
+          </v-card>
         </v-row>
       </v-card>
     </div>
