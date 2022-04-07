@@ -35,7 +35,7 @@
             </div>
           </div>
           <br />
-          <span class="font-weight-light"> University of the Philippines Diliman</span>
+          <h1 class="font-weight-light mt-n2"> Digital Space</h1>
         </v-col>
         <!-- Nav Buttons -->
         <v-col cols="4" class="mt-3 ml-2">
@@ -61,17 +61,20 @@
                   <v-list-item class="font-weight-bold" :href="'https://upslis.info/'">
                     <v-list-item-title>UP SLIS Website</v-list-item-title>
                   </v-list-item>
+                  <v-list-item class="font-weight-bold" :href="'https://digitalarchives.upd.edu.ph'">
+                    <v-list-item-title>UPD Digital Archives</v-list-item-title>
+                  </v-list-item>
                   <v-list-item class="font-weight-bold" :href="'https://ds.mainlib.upd.edu.ph/'">
-                    <v-list-item-title>Tuklas</v-list-item-title>
+                    <v-list-item-title> UPD Tuklas</v-list-item-title>
                   </v-list-item>
-                  <v-list-item class="font-weight-bold" :href="'https://upslis.info/'">
-                    <v-list-item-title>Tuklas</v-list-item-title>
+                  <v-list-item class="font-weight-bold" :href="'https://mainlib.upd.edu.ph/online-subscriptions'">
+                    <v-list-item-title>UL Online Subscriptions</v-list-item-title>
                   </v-list-item>
-                  <v-list-item class="font-weight-bold" :href="'https://upslis.info/'">
-                    <v-list-item-title>Tuklas</v-list-item-title>
+                  <v-list-item class="font-weight-bold" :href="' https://ipp.mainlib.upd.edu.ph'">
+                    <v-list-item-title>Index to Philippine Periodicals</v-list-item-title>
                   </v-list-item>
-                  <v-list-item class="font-weight-bold" :href="'https://upslis.info/'">
-                    <v-list-item-title>Tuklas</v-list-item-title>
+                  <v-list-item class="font-weight-bold" :href="'https://ipn.mainlib.upd.edu.ph'">
+                    <v-list-item-title>Index to Philippine Newspapers</v-list-item-title>
                   </v-list-item>
                 </v-list-item-group>
               </v-list>

@@ -26,7 +26,7 @@
         width="100%"
         flat
         rounded="0"
-        height="40em"
+        height="35em"
       >
         <v-row>
           <v-col cols="7">
@@ -84,14 +84,14 @@
         height="25em"
       >
         <v-row align="center" justify="center pt-9">
-          <v-card-title class="goals">Goals and Objectives</v-card-title>
+          <v-card-title class="goals">Role and Objectives</v-card-title>
         </v-row>
         <v-row class="my-5">
           <v-col></v-col>
           <v-col cols="5">
             <v-card color="#3d424a" width="40em" height="10em">
-              <h2 class="text-center pt-5" style="color: #fffcf0">Goals</h2>
-              <v-card-text class="px-5 text-justify" style="color: #fff2cc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+              <h2 class="text-center pt-5" style="color: #fffcf0">Role</h2>
+              <v-card-text class="px-5 text-justify" style="color: #fff2cc"><ul><li>Serve the needs of the faculty, students, and researchers of the university.</li></ul></v-card-text>
             </v-card>
           </v-col>
           <v-col cols="5">
@@ -194,7 +194,7 @@ export default {
     color:#fff2cc;
   }
   .histimg {
-    height: 40em;
+    height: 35em;
   }
   .mission {
     font-size: 3.5em;
