@@ -38,7 +38,7 @@
           <h1 class="font-weight-light mt-n2"> Digital Space</h1>
         </v-col>
         <!-- Nav Buttons -->
-        <v-col cols="4" class="mt-3 ml-2">
+        <v-col cols="5" class="mt-3 ml-2">
           <v-row align="center">
             <v-btn class="mx-n1" text color="#faf4e6" @click="goToHome"> Home </v-btn>
             <v-btn class="mx-n1" text color="#faf4e6" @click="goToCollection"> Collections </v-btn>
@@ -184,6 +184,7 @@ export default {
   name: 'App',
   data () {
     return {
+      loggedIn: false,
       show: false,
       password: '',
       username: '',
@@ -199,7 +200,7 @@ export default {
         },
         {
           name: "mdi-email",
-          url: "mailto:library.slis.updiliman@up.edu.ph",
+          url: "mailto:library.slis.updiliman@up.e{du.ph",
           target: "_blank",
         },
         {
@@ -221,11 +222,26 @@ export default {
       this.$router.push('/')
     },
     sendLoginDetails() {
-      axios.post('/login', {
-        username: this.username,
-        password: this.password
+      axios({
+        method: 'POST',
+        url: '/login',
+        data: JSON.stringify({
+          username: this.username,
+          password: this.password
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        }
       }).then((response) => {
-        console.log(response.data)
+        console.log(response.data);
+        if (response.data['login'] == true) {
+          this.loggedIn = true;
+          this.dialog = false;
+          this.$router.push('/admin');
+        }
+      }).catch((error) => {
+        console.log(error);
       })
     }
   }

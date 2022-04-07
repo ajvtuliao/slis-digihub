@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, request, session
+from flask import Flask, send_from_directory, request, session, redirect
 import os, secrets
 
 app = Flask(__name__, static_url_path='', 
@@ -13,12 +13,17 @@ def home():
 @app.route('/login', methods=['POST'])
 def login():
     if request.method == 'POST':
-        if request.form['username'] == 'admin' and \
-            request.form['password'] == 'admin':
-            session['username'] == request.form['username']
+        if request.json['username'] == 'admin' and \
+            request.json['password'] == 'admin':
+            session['username'] = request.json['username']
             return {
                 'login': 'username' in session
             }
+
+@app.route('/admin')
+def checkIfAdmin():
+    if 'username' not in session:
+        return redirect('/')
 
 @app.route('/logout')
 def logout():
