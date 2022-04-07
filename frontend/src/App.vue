@@ -227,7 +227,16 @@ export default {
   name: "App",
   data() {
     return {
-      loggedIn: false,
+      loggedIn: axios.get("/isLoggedIn").then((res) => {
+          console.log(res.data)
+          if (res.data.login == true) {
+            console.log(true)
+            return true
+          } else {
+            console.log(false)
+            return false
+          }
+        }),
       show: false,
       password: "",
       username: "",
@@ -291,7 +300,7 @@ export default {
     },
     logout() {
       if (this.loggedIn == true) {
-        this.loggedIn = false;
+        this.loggedIn = false
         axios.get("/logout");
         this.$router.push("/");
       }
