@@ -135,7 +135,7 @@
                     <v-spacer></v-spacer>
                     <v-row>
                       <v-col align="center" class="mt-9 mb-4">
-                        <v-btn x-large text color="#f7e37e" pb-9>
+                        <v-btn x-large text color="#f7e37e" pb-9 @click="sendLoginDetails">
                           Login
                         </v-btn>
                       </v-col>
@@ -174,6 +174,9 @@
 </template>
 
 <script>
+
+const axios = require('axios').default;
+
 export default {
   name: 'App',
   data () {
@@ -213,6 +216,14 @@ export default {
     },
     goToHome() {
       this.$router.push('/')
+    },
+    sendLoginDetails() {
+      axios.post('/login', {
+        username: this.username,
+        password: this.password
+      }).then((response) => {
+        console.log(response.data)
+      })
     }
   }
 }
