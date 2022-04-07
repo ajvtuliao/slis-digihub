@@ -50,7 +50,6 @@
             <v-menu transition="slide-x-transition" offset-y bottom right dense>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
-                  class="mx-n1"
                   text
                   color="faf4e6"
                   v-bind="attrs"
