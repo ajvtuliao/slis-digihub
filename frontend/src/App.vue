@@ -243,6 +243,12 @@ export default {
       }).catch((error) => {
         console.log(error);
       })
+    },
+    logout() {
+      if (this.loggedIn == true) {
+        axios.get('/logout')
+        this.$router.push('/')
+      }
     }
   }
 }
