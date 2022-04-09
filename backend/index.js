@@ -9,12 +9,18 @@ const port = 5000
 
 app.use(express.static(path.join(__dirname + '/../frontend/dist')))
 app.use(express.json())
+
 app.use(session({
     secret: crypto.randomBytes(32).toString('hex'),
     saveUninitialized: false,
     cookie: {maxAge: oneDay},
-    resave: false
+    resave: true,
+    rolling: true,
+    cookie: {
+        expires: 20 * 1000
+    }
 }))
+
 app.use(cookieParser())
 
 

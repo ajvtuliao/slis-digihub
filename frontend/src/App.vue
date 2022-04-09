@@ -26,7 +26,7 @@
           />
         </v-col>
         <!-- Title -->
-        <v-col cols="7" class="mb-n3">
+        <v-col cols="6" class="mb-n3">
           <div class="mb-n6">
             <div class="slis font-weight-bold display-1 mr-3">
               UP School of Library and Information Studies Library
@@ -49,12 +49,7 @@
             </v-btn>
             <v-menu transition="slide-x-transition" offset-y bottom right dense>
               <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  text
-                  color="faf4e6"
-                  v-bind="attrs"
-                  v-on="on"
-                >
+                <v-btn text color="faf4e6" v-bind="attrs" v-on="on">
                   Links
                 </v-btn>
               </template>
@@ -226,16 +221,7 @@ export default {
   name: "App",
   data() {
     return {
-      loggedIn: axios.get("/isLoggedIn").then((res) => {
-          console.log(res.data)
-          if (res.data.login == true) {
-            console.log(true)
-            return true
-          } else {
-            console.log(false)
-            return false
-          }
-        }),
+      loggedIn: false,
       show: false,
       password: "",
       username: "",
@@ -270,7 +256,11 @@ export default {
       this.$router.push("/about");
     },
     goToHome() {
-      this.$router.push("/");
+      if (this.loggedIn == false) {
+        this.$router.push("/");
+      } else {
+        this.$router.push("/admin");
+      }
     },
     sendLoginDetails() {
       axios({
@@ -297,13 +287,26 @@ export default {
           console.log(error);
         });
     },
-    logout() {
+    async logout() {
       if (this.loggedIn == true) {
-        this.loggedIn = false
-        axios.get("/logout");
+        await axios.get("/logout");
+        this.loggedIn = false;
         this.$router.push("/");
       }
     },
+  },
+  beforeMount() {
+    const logInCheck = async () => {
+      const loginStatus = await axios.get("/isLoggedIn");
+      if (loginStatus.data.login) {
+        this.loggedIn = true;
+        console.log(true);
+      } else {
+        this.loggedIn = false;
+        console.log(false);
+      }
+    };
+    logInCheck();
   },
 };
 </script>
