@@ -4,16 +4,7 @@
 
 ### backend
 
-- To run the backend, first create a `venv` in the backend folder. This can be done
-by running the following command in the `slis-digihub` folder.
-
-    ```
-    python -m venv backend
-    ```
-
-- Afterwards, go inside the backend folder and run `source /bin/activate` in Unix-like OS
-or `\Scripts\activate.bat` in CMD or `\Scripts\Activate.ps1` in Powershell. 
-- Then, install the dependencies using `pip install -r requirements.txt`
+for the backend, make sure to install `yarn` and run `yarn install` inside the backend folder
 
 ### frontend
 for the frontend, make sure to install `yarn` and run `yarn install` inside the frontend folder
