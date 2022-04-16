@@ -156,31 +156,42 @@
                         <tr>
                             <!-- Title -->
                             <td>
-
+                              {{book.title}}
                             </td>
                             <!-- Author -->
                             <td>
-
+                              {{book.author}}
                             </td>
                             <!-- Publisher -->
                             <td>
-
+                              {{book.publisher}}
                             </td>
                             <!-- Year -->
                             <td>
-
+                              {{book.year}}
                             </td>
                             <!-- Type -->
                             <td>
-
+                              <v-chip :color="color(type)">
+                                <span>{{book.type}}</span>
+                              </v-chip>
                             </td>
                             <!-- Links -->
                             <td>
-
+                              {{book.link1}}
+                              {{book.link2}}
+                              {{book.link3}}
                             </td>
                             <!-- Edit Details -->
                             <td>
+                              <v-btn color="#63bf5e" dark small @click="get_book_details(book.id)">
+                                <v-icon>mdi-clipboard-edit</v-icon>
+                                <span>Edit Details</span>
+                              </v-btn>
+                              <!-- Edit Dialog Box -->
+                              <v-dialog v-model="dialog2.show" width="800px">
 
+                              </v-dialog>
                             </td>
                             <!-- Remove -->
                             <td>
