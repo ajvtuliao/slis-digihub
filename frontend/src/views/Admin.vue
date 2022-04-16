@@ -80,6 +80,7 @@
                                 x-large
                                 text
                                 color="green"
+                                @click="addBook"
                               >
                                 Add Resource
                               </v-btn>
@@ -101,7 +102,7 @@
                               <h3 class="font-weight-medium px-7 mt-3">Image:</h3>
                             </v-col>
                             <v-col cols="9">
-                              <v-file-input label="Add image" outlined dense accept="image/png, image/jpeg, image/bmp" class="pr-7"></v-file-input>
+                              <v-file-input label="Add image" outlined dense accept="image/png, image/jpeg, image/bmp" class="pr-7" v-model="imageFile"></v-file-input>
                             </v-col>
                         </v-row>
                         <v-row>
@@ -126,6 +127,7 @@
                                 x-large
                                 text
                                 color="green"
+                                @click="addImage"
                               >
                                 Add Image
                               </v-btn>
@@ -230,18 +232,89 @@
     </div>
 </template>
 <script>
+// TODO: add a toast component to signify if the book has been uploaded
+import axios from 'axios'
 export default {
     data: () => ({
+      imageFile: null,
+      addRecs: false,
+      addCarousel: false,
       items: ['eBook', 'Podcast', 'Journal', 'Audiobook', 'Video', 'Periodical', 'Article', 'Newspaper', 'Magazine', 'Thesis'],
       author: '',
       title: '',
       title1: '',
       publisher: '',
+      year: '',
+      types: [],
       link1: '',
       link2: '',
       link3: '',
       link4: '',
     }),
+    beforeMount() {
+      this.getBooks()
+      this.getImages()
+    },
+    beforeUpdate() {
+      this.getBooks()
+      this.getImages()
+    },
+    methods: {
+      // TODO: set books to this and update list of books
+      async getBooks() {
+        const listBooks = await axios.get('/getBooks');
+        console.log(listBooks);
+      },
+      async getImages() {
+        const listImages = await axios.get('/getImages');
+        console.log(listImages);
+      },
+      async addBook() {
+        axios.post('/addBook', {
+          bookTitle: this.title, 
+          bookAuthor: this.author, 
+          bookPublisher: this.publisher, 
+          bookYear: parseInt(this.year, 10), 
+          bookType: JSON.stringify(this.types), 
+          bookLink1: this.link1, 
+          bookLink2: this.link2,
+          bookLink3: this.link3
+        }).then((resp) => {
+          if (resp.statusText == 'OK') {
+            // TODO: set this to end the toast when adding book
+            this.author = '';
+            this.title = '';
+            this.publisher = '';
+            this.year = '';
+            this.types = '';
+            this.link1 = '';
+            this.link2 = '';
+            this.link3 = '';
+            this.addRecs = false;
+          }
+        })
+      },
+      async addImage() {
+        if (this.imageFile) {
+          let formData = new FormData();
+          // TODO: try setting the filename of the image
+          formData.append('file', this.imageFile, this.imageFile.name)
+          formData.append('bookTitle', this.title1)
+          formData.append('bookLink', this.link4)
+          axios.post('/addImage', formData).then(resp => {
+            console.log(resp);
+            this.imageFile = null;
+            this.title1 = '';
+            this.link4 = '';
+            this.addCarousel = false;
+          }).catch(err => {
+            console.log(err);
+          })
+        } else {
+          console.log('There is no image')
+        }
+      }
+    }
 }
 </script>
 <style scoped>

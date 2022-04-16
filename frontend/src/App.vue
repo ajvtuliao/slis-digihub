@@ -276,7 +276,6 @@ export default {
         },
       })
         .then((response) => {
-          console.log(response.data);
           if (response.data["login"] == true) {
             this.loggedIn = true;
             this.dialog = false;

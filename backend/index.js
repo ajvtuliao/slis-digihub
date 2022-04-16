@@ -1,28 +1,89 @@
+const morgan = require('morgan')
+const multer = require('multer')
 const express = require('express');
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const crypto = require('crypto')
 const path = require('path')
+const sqlite3 = require('sqlite3').verbose();
 const app = express()
+
+/*############################################################################*/
+
+// set session expiry
 const oneDay = 1000 * 60 * 60 * 24;
+// set port
 const port = 5000
 
+/*############################################################################*/
+
+// Serve the frontend in dist
 app.use(express.static(path.join(__dirname + '/../frontend/dist')))
 app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+app.use(morgan('dev'))
 
+/*############################################################################*/
+
+// Set-up sessions
 app.use(session({
     secret: crypto.randomBytes(32).toString('hex'),
     saveUninitialized: false,
-    cookie: {maxAge: oneDay},
+    cookie: { maxAge: oneDay },
     resave: true,
     rolling: true,
-    cookie: {
-        expires: 20 * 1000
-    }
 }))
-
 app.use(cookieParser())
 
+
+/*############################################################################*/
+
+// Set-up storage of photos
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, __dirname + '/../frontend/dist/img')
+    },
+    filename: (req, file, cb) => {
+        cb(null, crypto.randomBytes(4).toString('hex')+'.'+file.mimetype.split('/').reverse()[0])
+    }
+})
+
+const upload = multer({storage: storage})
+
+/*#############################################################################*/
+
+// Set-up the sqlite database
+var db = new sqlite3.Database('./digihub.db')
+
+db.serialize(() => {
+    db.run(`
+        create table if not exists bookImages (
+            bookImage text not null,
+            bookTitle text primary key not null,
+            bookLink text
+        );
+    `);
+
+    db.run(`
+        create table if not exists bookDetails (
+            bookId int primary key,
+            bookTitle text not null,
+            bookAuthor text,
+            bookPublisher text,
+            bookYear int,
+            bookType text not null,
+            bookLink1 text,
+            bookLink2 text,
+            bookLink3 text,
+            foreign key (bookTitle)
+                references bookImages (bookTitle)
+        );
+    `);
+})
+
+/*############################################################################*/
+
+// Set-up paths
 
 app.post('/login', (req, res) => {
     if (req.body.username == 'admin' && req.body.password == 'admin') {
@@ -63,11 +124,89 @@ app.get('/isLoggedIn', (req, res) => {
     }
 })
 
+app.post('/addBook', (req, res) => {
+    db.serialize(() => {
+        db.run(`
+        insert into bookDetails (bookTitle, bookAuthor, bookPublisher, bookYear,
+            bookType, bookLink1, bookLink2, bookLink3)
+            values ('${req.body.bookTitle}', '${req.body.bookAuthor}', 
+            '${req.body.bookPublisher}', '${req.body.bookYear}', 
+            '${req.body.bookType}', '${req.body.bookLink1}', 
+            '${req.body.bookLink2}', '${req.body.bookLink3}');
+        `, (err, rows) => {
+            if (err) {
+                console.log(err)
+                res.status(500).send(err)
+            } else {
+                console.log(rows)
+                res.status(200).send('OK')
+            }
+        })
+    })
+    res.status(200).send('OK')
+})
+
+app.post('/addImage', upload.single('file'), async (req, res) => {
+    console.log(req.file)
+    db.serialize(() => {
+        db.run(`
+        insert into bookImages (bookImage, bookTitle, bookLink)
+            values ('${req.file.path}', '${req.body.bookTitle}', 
+                '${req.body.bookLink}')`
+        , (err, rows) => {
+            if (err) {
+                console.log(err)
+                res.status(500).send(err)
+            } else {
+                console.log(rows)
+                res.status(200).send('OK')
+            }
+        })
+    })
+})
+
+app.get('/getBooks', (req, res) => {
+    db.serialize(() => {
+        db.all(`
+            select bookTitle, bookAuthor, bookPublisher, bookYear, 
+                bookType, bookLink1, bookLink2, bookLink3 from bookDetails;
+        `, (err, rows) => {
+            if (err) {
+                console.log(err)
+                res.status(500).send(err)
+            } else {
+                console.log(rows)
+                res.status(200).send(rows)
+            }
+        })
+    })
+})
+
+app.get('/getImages', (req, res) => {
+    db.serialize(() => {
+        db.all(`
+            select bookImage, bookTitle, bookLink from bookImages;
+        `, (err, rows) => {
+            if (err) {
+                console.log(err)
+                res.status(500).send(err)
+            } else {
+                console.log(rows)
+                res.status(200).send(rows)
+            }
+        })
+    })
+})
+
 app.get('*', (req, res) => {
     res.sendFile(
         path.resolve(__dirname + '/../frontend/dist', 'index.html')
     )
 })
+
+/*############################################################################*/
+
+// Run the server
 
 app.listen(port, () => {
     console.log(`Starting app at port ${port}`)
