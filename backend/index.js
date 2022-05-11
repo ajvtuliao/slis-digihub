@@ -93,11 +93,13 @@ app.post('/login', (req, res) => {
             login: true
         })
     }
+    return
 })
 
 app.get('/logout', (req, res) => {
     req.session.destroy()
     res.redirect('/')
+    return
 })
 
 app.get('/admin', (req, res) => {
@@ -109,6 +111,7 @@ app.get('/admin', (req, res) => {
             path.resolve(__dirname + '/../frontend/dist', 'index.html')
         )
     }
+    return
 })
 
 app.get('/isLoggedIn', (req, res) => {
@@ -122,6 +125,7 @@ app.get('/isLoggedIn', (req, res) => {
             login: false
         })
     }
+    return
 })
 
 app.post('/addBook', (req, res) => {
@@ -143,7 +147,7 @@ app.post('/addBook', (req, res) => {
             }
         })
     })
-    res.status(200).send('OK')
+    return
 })
 
 app.post('/addImage', upload.single('file'), async (req, res) => {
@@ -163,6 +167,7 @@ app.post('/addImage', upload.single('file'), async (req, res) => {
             }
         })
     })
+    return
 })
 
 app.get('/getBooks', (req, res) => {
@@ -180,6 +185,7 @@ app.get('/getBooks', (req, res) => {
             }
         })
     })
+    return
 })
 
 app.get('/getImages', (req, res) => {
@@ -196,12 +202,21 @@ app.get('/getImages', (req, res) => {
             }
         })
     })
+    return
+})
+
+app.get('/img/:image', (req, res) => {
+    res.sendFile(
+        path.resolve(__dirname + '/../frontend/dist/img', req.params.image)
+    )
+    return
 })
 
 app.get('*', (req, res) => {
     res.sendFile(
         path.resolve(__dirname + '/../frontend/dist', 'index.html')
     )
+    return
 })
 
 /*############################################################################*/

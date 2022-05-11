@@ -11,4 +11,4 @@ for the frontend, make sure to install `yarn` and run `yarn install` inside the 
 
 # Quickstart
 Make sure that you have finished setting up both `backend` and `frontend` folders. After setup,
-run `run.py` in the main folder
+run `build.py` in the main folder
