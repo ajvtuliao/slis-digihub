@@ -150,6 +150,8 @@ app.post('/addBook', (req, res) => {
     return
 })
 
+
+
 app.post('/addImage', upload.single('file'), async (req, res) => {
     console.log(req.file)
     db.serialize(() => {
@@ -173,7 +175,7 @@ app.post('/addImage', upload.single('file'), async (req, res) => {
 app.get('/getBooks', (req, res) => {
     db.serialize(() => {
         db.all(`
-            select bookTitle, bookAuthor, bookPublisher, bookYear, 
+            select rowid, bookTitle, bookAuthor, bookPublisher, bookYear, 
                 bookType, bookLink1, bookLink2, bookLink3 from bookDetails;
         `, (err, rows) => {
             if (err) {
@@ -191,7 +193,7 @@ app.get('/getBooks', (req, res) => {
 app.get('/getImages', (req, res) => {
     db.serialize(() => {
         db.all(`
-            select bookImage, bookTitle, bookLink from bookImages;
+            select rowid, bookImage, bookTitle, bookLink from bookImages;
         `, (err, rows) => {
             if (err) {
                 console.log(err)
@@ -204,6 +206,41 @@ app.get('/getImages', (req, res) => {
     })
     return
 })
+
+app.post('/removeImage', (req, res) => {
+    db.serialize(() => {
+        db.run(`
+            delete from bookImages where rowid = ${req.body.rowid};
+        `, (err, rows) => {
+            if (err) {
+                console.log(err)
+                res.status(500).send(err)
+            } else {
+                console.log(rows)
+                res.status(200).send(rows)
+            }
+        })
+    })
+    return
+})
+
+app.post('/removeBook', (req, res) => {
+    db.serialize(() => {
+        db.run(`
+            delete from bookDetails where rowid = ${req.body.rowid};
+        `, (err, rows) => {
+            if (err) {
+                console.log(err)
+                res.status(500).send(err)
+            } else {
+                console.log(rows)
+                res.status(200).send(rows)
+            }
+        })
+    })
+    return
+})
+
 
 app.get('/img/:image', (req, res) => {
     res.sendFile(
