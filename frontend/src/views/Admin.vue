@@ -4,7 +4,7 @@
       <!-- Search Bar -->
       <v-col cols="9">
         <v-text-field class="search" placeholder="Search Collections" outlined dense prepend-inner-icon="mdi-magnify"
-          clearable v-model="search">
+          clearable v-model="search" v-debounce:300ms="searchBook">
         </v-text-field>
       </v-col>
       <!-- Add Books -->
@@ -170,11 +170,30 @@
               </td>
               <!-- Type -->
               <td>
-                {{ book.bookType }}
+                {{ book.bookType.toString()
+                    .replace(",", ", ")
+                    .replace("[", "")
+                    .replace("]", "")
+                    .replaceAll("\"", "")
+                    .trim()
+                }}
               </td>
               <!-- Links -->
               <td>
-                {{ book.bookLink1 }}, {{ book.bookLink2 }}, {{ book.bookLink3 }}
+                <v-row>
+                  <v-col md="4" class="ml-auto">
+                    <v-btn color="green" v-if="book.bookLink1 != ''" @click="copy(book.bookLink1)">Link 1</v-btn>
+                  </v-col>
+                  <v-col md="4" class="ml-auto">
+                    <v-btn color="green" v-if="book.bookLink2 != ''" @click="copy(book.bookLink2)">Link 2
+                    </v-btn>
+
+                  </v-col>
+                  <v-col md="4" class="ml-auto">
+                    <v-btn color="green" v-if="book.bookLink3 != ''" @click="copy(book.bookLink3)">Link 3
+                    </v-btn>
+                  </v-col>
+                </v-row>
               </td>
               <td>
                 <v-dialog v-model="editRecs" width="80em">
@@ -304,12 +323,29 @@
           </tbody>
         </template>
       </v-simple-table>
+      <v-snackbar v-model="uploaded">
+        Uploaded!
+        <template v-slot:action="{ attrs }">
+          <v-btn color="pink" text v-bind="attrs" @click="uploaded = false">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
+      <v-snackbar v-model="copiedLink">
+        Copied!
+        <template v-slot:action="{ attrs }">
+          <v-btn color="pink" text v-bind="attrs" @click="copiedLink = false">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
     </v-row>
   </div>
 </template>
 <script>
 // TODO: add a toast component to signify if the book has been uploaded
 import axios from "axios";
+import Fuse from 'fuse.js';
 export default {
   data: () => ({
     imageFile: null,
@@ -340,6 +376,8 @@ export default {
     link4: "",
     images: [],
     books: [],
+    uploaded: false,
+    copiedLink: false
   }),
   mounted() {
     this.getImages();
@@ -395,6 +433,7 @@ export default {
             this.link2 = "";
             this.link3 = "";
             this.addRecs = false;
+            this.uploaded = true;
           }
         });
     },
@@ -413,6 +452,7 @@ export default {
             this.title1 = "";
             this.link4 = "";
             this.addCarousel = false;
+            this.uploaded = true;
           })
           .catch((err) => {
             console.log(err);
@@ -424,16 +464,6 @@ export default {
     async getBooks() {
       const listBooks = await axios.get("/getBooks");
       this.books = listBooks.data;
-      this.fuse = new Fuse(this.books, {
-        keys: ['bookTitle',
-          'bookAuthor',
-          'bookPublisher',
-          'bookYear',
-          'bookType',
-          'bookLink1',
-          'bookLink2',
-          'bookLink3']
-      })
       // console.log("books")
       console.log(this.books);
     },
@@ -485,6 +515,32 @@ export default {
           }
         });
     },
+    async searchBook(book) {
+      if (book == "") {
+        this.getBooks()
+      } else {
+        console.log('search')
+        console.log(book)
+        const fuse = new Fuse(this.books, {
+          keys: ['bookTitle',
+            'bookAuthor',
+            'bookPublisher',
+            'bookYear',
+            'bookType',
+            'bookLink1',
+            'bookLink2',
+            'bookLink3']
+        })
+        console.log('built index')
+        var searchRes = fuse.search(book)
+        console.log(searchRes)
+        this.books = searchRes.map(x => x.item)
+      }
+    },
+    async copy(url) {
+      navigator.clipboard.writeText(url)
+      this.copiedLink = true
+    }
   },
 };
 </script>
