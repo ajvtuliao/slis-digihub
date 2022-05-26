@@ -207,6 +207,31 @@ app.get('/getImages', (req, res) => {
     return
 })
 
+app.post('/editBook', (req, res) => {
+    db.serialize(() => {
+        db.run(`
+            update bookDetails 
+            set bookTitle = '${req.body.bookTitle}', 
+            bookAuthor = '${req.body.bookAuthor}', 
+            bookPublisher = '${req.body.bookPublisher}', 
+            bookYear = '${req.body.bookYear}', 
+            bookType = '${req.body.bookType}', 
+            bookLink1 = '${req.body.bookLink1}', 
+            bookLink2 = '${req.body.bookLink2}', 
+            bookLink3 = '${req.body.bookLink3}'
+            where rowid = '${req.body.rowid}';
+        `, (err, rows) => {
+            if (err) {
+                console.log(err)
+                res.status(500).send(err)
+            } else {
+                console.log(rows)
+                res.status(200).send(rows)
+            }
+        })
+    })
+})
+
 app.post('/removeImage', (req, res) => {
     db.serialize(() => {
         db.run(`
