@@ -332,7 +332,7 @@
         </template>
       </v-snackbar>
       <v-snackbar v-model="copiedLink">
-        Copied!
+        Copied to clipboard!
         <template v-slot:action="{ attrs }">
           <v-btn color="pink" text v-bind="attrs" @click="copiedLink = false">
             Close
@@ -396,8 +396,8 @@ export default {
           element.bookImage.indexOf("images")
         );
       });
-      console.log("images")
-      console.log(this.images);
+      // console.log("images")
+      // console.log(this.images);
     },
     async removeImage(id, image) {
       console.log('image: ' + image)

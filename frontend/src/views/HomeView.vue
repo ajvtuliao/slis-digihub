@@ -12,13 +12,21 @@
       <v-sheet class="mx-auto mb-10" elevation="4" max-width="80em" color="rgba(42, 46, 52, 0.1)">
         <v-slide-group v-model="eresource" class="pa-4" center-active show-arrows>
           <v-slide-item v-for="image in images" :key="image.id" v-slot="{ active, toggle }">
-            <v-card :color="active ? '#fcda42' : '#fffade'" class="ma-4" height="300" width="200" @click="toggle">
+            <v-card :color="active ? '#fcda42' : '#fffade'" class="ma-4" height="300" width="200" @click="toggle; copy(image.bookLink)">
               <!-- <v-img :src="`/${images[n].bookImage}`" v-if="images[n]"></v-img> -->
               <v-img :src="`/${image.bookImage}`" height="300" width="200" contain></v-img>
             </v-card>
           </v-slide-item>
         </v-slide-group>
       </v-sheet>
+      <v-snackbar v-model="copiedLink">
+        Copied to clipboard!
+        <template v-slot:action="{ attrs }">
+          <v-btn color="pink" text v-bind="attrs" @click="copiedLink = false">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
     </div>
 
 
@@ -47,7 +55,8 @@ export default {
           src: require('../assets/img7.jpg'),
         }
       ],
-      images: []
+      images: [],
+      copiedLink: false
     }
   },
   mounted() {
@@ -63,6 +72,10 @@ export default {
       // console.log("images-home")
       // console.log(this.images)
     },
+    async copy(url) {
+      navigator.clipboard.writeText(url)
+      this.copiedLink = true
+    }
   }
 }
 </script>
