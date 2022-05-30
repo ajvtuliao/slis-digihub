@@ -58,7 +58,7 @@ export default {
       const listImages = await axios.get('/getImages');
       this.images = listImages.data;
       this.images.forEach(element => {
-        element.bookImage = element.bookImage.substring(element.bookImage.indexOf('img'))
+        element.bookImage = element.bookImage.substring(element.bookImage.indexOf('images'))
       });
       // console.log("images-home")
       // console.log(this.images)

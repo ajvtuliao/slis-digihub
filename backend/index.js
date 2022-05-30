@@ -7,6 +7,7 @@ const crypto = require('crypto')
 const path = require('path')
 const sqlite3 = require('sqlite3').verbose();
 const app = express()
+const fs = require('fs')
 
 /*############################################################################*/
 
@@ -39,9 +40,13 @@ app.use(cookieParser())
 /*############################################################################*/
 
 // Set-up storage of photos
+if (!fs.existsSync('./images')) {
+    fs.mkdirSync('./images')
+}
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, __dirname + '/../frontend/dist/img')
+        cb(null, __dirname + '/images')
     },
     filename: (req, file, cb) => {
         cb(null, crypto.randomBytes(4).toString('hex')+'.'+file.mimetype.split('/').reverse()[0])
@@ -246,6 +251,7 @@ app.post('/removeImage', (req, res) => {
             }
         })
     })
+    fs.unlinkSync(`./${req.body.image}`)
     return
 })
 
@@ -267,9 +273,9 @@ app.post('/removeBook', (req, res) => {
 })
 
 
-app.get('/img/:image', (req, res) => {
+app.get('/images/:image', (req, res) => {
     res.sendFile(
-        path.resolve(__dirname + '/../frontend/dist/img', req.params.image)
+        path.resolve(__dirname + '/images', req.params.image)
     )
     return
 })

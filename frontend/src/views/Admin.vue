@@ -315,7 +315,7 @@
               <!-- Remove -->
               <td>
                 <v-btn v-model="remove" color="red" align="center" justify="center"
-                  @click.stop="removeImage(image.rowid)">
+                  @click.stop="removeImage(image.rowid, image.bookImage)">
                   Remove
                 </v-btn>
               </td>
@@ -393,14 +393,15 @@ export default {
       this.images = listImages.data;
       this.images.forEach((element) => {
         element.bookImage = element.bookImage.substring(
-          element.bookImage.indexOf("img")
+          element.bookImage.indexOf("images")
         );
       });
-      // console.log("images")
-      // console.log(this.images);
+      console.log("images")
+      console.log(this.images);
     },
-    async removeImage(id) {
-      await axios.post("/removeImage", { rowid: id });
+    async removeImage(id, image) {
+      console.log('image: ' + image)
+      await axios.post("/removeImage", { rowid: id, image: image});
       await this.getImages();
       return;
     },

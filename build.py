@@ -12,4 +12,4 @@ os.chdir('../backend')
 if os.path.isdir('node_modules') == False:
     os.system('yarn install')
 
-os.system('node index.js')
+os.system('npm run start')
