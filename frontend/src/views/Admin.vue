@@ -136,7 +136,7 @@
       </v-col>
     </v-row>
     <v-row class="mx-n12" align="center" justify="center">
-      <v-simple-table dark>
+      <v-simple-table dark height="300px">
         <template v-slot:default>
           <thead>
             <tr>
@@ -145,7 +145,6 @@
               <th class="text-center">Publisher</th>
               <th class="text-center">Year</th>
               <th class="text-center">Type</th>
-              <th class="text-center">Links</th>
               <th class="text-center">Edit Details</th>
               <th class="text-center">Remove Book</th>
             </tr>
@@ -177,23 +176,6 @@
                     .replaceAll("\"", "")
                     .trim()
                 }}
-              </td>
-              <!-- Links -->
-              <td>
-                <v-row>
-                  <v-col md="4" class="ml-auto">
-                    <v-btn color="green" v-if="book.bookLink1 != ''" @click="copy(book.bookLink1)">Link 1</v-btn>
-                  </v-col>
-                  <v-col md="4" class="ml-auto">
-                    <v-btn color="green" v-if="book.bookLink2 != ''" @click="copy(book.bookLink2)">Link 2
-                    </v-btn>
-
-                  </v-col>
-                  <v-col md="4" class="ml-auto">
-                    <v-btn color="green" v-if="book.bookLink3 != ''" @click="copy(book.bookLink3)">Link 3
-                    </v-btn>
-                  </v-col>
-                </v-row>
               </td>
               <td>
                 <v-dialog v-model="editRecs" width="80em">
@@ -288,7 +270,7 @@
       </v-simple-table>
     </v-row>
     <v-row class="mx-n12 mt-12" align="center" justify="center">
-      <v-simple-table class="table" fixed-header dark>
+      <v-simple-table class="table my-6" fixed-header dark height="300px">
         <template v-slot:default>
           <thead>
             <tr>

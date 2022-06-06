@@ -26,7 +26,7 @@
           />
         </v-col>
         <!-- Title -->
-        <v-col cols="6" class="mb-n3">
+        <v-col cols="7" class="mb-n3">
           <div class="mb-n6">
             <div class="slis font-weight-bold display-1 mr-3">
               UP School of Library and Information Studies Library
@@ -36,7 +36,7 @@
           <h1 class="font-weight-light mt-n2">Digital Space</h1>
         </v-col>
         <!-- Nav Buttons -->
-        <v-col cols="5" class="mt-3 ml-2">
+        <v-col cols="4" class="mt-3 ml-2">
           <v-row align="center">
             <v-btn class="mx-n1" text color="#faf4e6" @click="goToHome">
               Home

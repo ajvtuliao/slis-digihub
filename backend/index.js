@@ -91,7 +91,7 @@ db.serialize(() => {
 // Set-up paths
 
 app.post('/login', (req, res) => {
-    if (req.body.username == 'admin' && req.body.password == 'admin') {
+    if (req.body.username == 'admin' && req.body.password == 'sl1sl1brary1960') {
         var session = req.session
         session.username = req.body.username
         res.json({
